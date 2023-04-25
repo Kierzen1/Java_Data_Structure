@@ -1,24 +1,24 @@
-class Employee { 
-     
-     public String name;
-     public int id;
-     public Employee (String name, int id) { 
-          this.name = name; 
-          this.id = id; 
-     }
- 
-     public String getName ( ) { return name; } 
-     public int getId ( ) { return id; }
-}
+//Employee Class
 
-class Manager extends Employee {
-     public String department = "department"; 
-     public Manager (String name, int id, String department) { 
-          super(department, id);
-          this.name = name; 
-          this.id = id; 
-          this.department = department;
-     } 
+public class Employee extends Student{
+      private String idno, positon;
+      
+         public Employee(){//default constructor
+            super(); 
+         }
+         public Employee(String idno, String name, int age, String position){
+            super(name,age);//invoker parent constructor(user-defined)
+            this.idno = idno;
+            this.position=position;
+         }
+         //setters
+         public void setIdno(String idno)       {this.idno = idno;}
+         public void setPosition(String postion){this.position = postion;}
+         //getters
+         public String getIdno()                {return idno;}
+         public String getPosition()            {return position;}
+         //utilitymethod
+         public abstract double computeSalary();//abstract makes the entire class abstract
+         
 
-   public String getDepartment() {return department; }
-   }   
+}//end of class
